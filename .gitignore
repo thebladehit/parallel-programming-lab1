@@ -1,0 +1,13 @@
+# GNAT genereated files
+*.o
+*.ali
+*.exe
+*.dll
+*.dylib
+*.so
+
+# Main file
+Lab1
+
+# Test file
+hello.*
