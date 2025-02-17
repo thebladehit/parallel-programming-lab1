@@ -28,6 +28,16 @@ package body Data is
       end loop;
    end printVectorInConsole;
 
+   procedure printMatrixInConsole(M: Matrix) is 
+   begin
+      for i in 0..N loop
+         for j in 0..N loop
+            Put(Item => Integer'Image(M(i, j)));
+         end loop;
+         New_Line;
+      end loop;
+   end printMatrixInConsole;
+
    function inputFromKeyboard(text: String) return Integer is
       Num: Integer;
    begin
@@ -76,6 +86,18 @@ package body Data is
       return resM;
    end multiplyMatrices;
 
+   function addMatrices(firstM: Matrix; secondM: Matrix) return Matrix is
+      resM: Matrix;
+   begin
+      for i in 0..N loop
+         for j in 0..N loop
+            resM(i, j) := firstM(i, j) + secondM(i, j);
+         end loop;
+      end loop;
+
+      return resM;
+   end addMatrices;
+
    function multiplyVectorOnMatrix(V: Vector; M: Matrix) return Vector is
       resV: Vector;
    begin
@@ -88,4 +110,38 @@ package body Data is
 
       return resV;
    end multiplyVectorOnMatrix;
+
+   procedure sortMatrixRow(row: in out Vector) is
+      curIdx, prevIdx: Integer;
+   begin
+      for i in 1..N loop
+         curIdx := row(i);
+         prevIdx := i - 1;
+         while prevIdx >= 0 and row(prevIdx) > curIdx loop
+            row(prevIdx + 1) := row(prevIdx);
+            prevIdx := prevIdx - 1;
+         end loop;
+         row(prevIdx + 1) := curIdx;
+      end loop;
+   end sortMatrixRow;
+
+   procedure sortMatrix(M: in out Matrix) is
+      curElem, prevIdx: Integer;
+   begin
+      for row in 0..N loop
+         for i in 1..N loop
+            curElem := M(row, i);
+            prevIdx := i - 1;
+            while prevIdx >= 0 loop
+               if M(row, prevIdx) > curElem then
+                  M(row, prevIdx + 1) := M(row, prevIdx);
+                  prevIdx := prevIdx - 1;
+               else
+                  exit;
+               end if;
+            end loop;
+            M(row, prevIdx + 1) := curElem;
+         end loop;
+      end loop;
+   end sortMatrix;
 end Data;

@@ -16,10 +16,13 @@ package Data is
    procedure printNewLineInConsole;
    procedure printTextInConsole(text: String);
    procedure printVectorInConsole(V: Vector);
+   procedure printMatrixInConsole(M: Matrix);
 
    procedure getVectorFromKeyboard(V: in out Vector; preText: String);
    procedure getMatrixFromKeyboard(M: in out Matrix; preText: String);
+   procedure sortMatrix(M: in out Matrix);
 
    function multiplyMatrices(firstM: Matrix; secondM: Matrix) return Matrix;
    function multiplyVectorOnMatrix(V: Vector; M: Matrix) return Vector;
+   function addMatrices(firstM: Matrix; secondM: Matrix) return Matrix;
 end Data;
