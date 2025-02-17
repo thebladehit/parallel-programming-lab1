@@ -25,4 +25,6 @@ package Data is
    function multiplyMatrices(firstM: Matrix; secondM: Matrix) return Matrix;
    function multiplyVectorOnMatrix(V: Vector; M: Matrix) return Vector;
    function addMatrices(firstM: Matrix; secondM: Matrix) return Matrix;
+   function maxMatrix(M: Matrix) return Integer;
+   function multiplyVectorOnNumber(num: Integer; V: Vector) return Vector;
 end Data;

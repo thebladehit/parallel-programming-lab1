@@ -111,6 +111,32 @@ package body Data is
       return resV;
    end multiplyVectorOnMatrix;
 
+   function multiplyVectorOnNumber(num: Integer; V: Vector) return Vector is
+      resV: Vector;
+   begin 
+      for i in 0..N loop
+         resV(i) := num * V(i);
+      end loop;
+
+      return resV;
+   end multiplyVectorOnNumber;
+
+   function maxMatrix(M: Matrix) return Integer is
+      maxV: Integer;
+   begin
+      maxV := M(0, 0);
+
+      for i in 0..N loop
+         for j in 0..N loop
+            if (M(i, j) > maxV) then
+               maxV := M(i, j);
+            end if;
+         end loop;
+      end loop;
+
+      return maxV;
+   end maxMatrix;
+
    procedure sortMatrixRow(row: in out Vector) is
       curIdx, prevIdx: Integer;
    begin
