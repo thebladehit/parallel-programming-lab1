@@ -16,24 +16,26 @@ procedure T3 is
    MR: Matrix;
    V: Vector;
 begin
-   if N < 1000 then
-      printTextInConsole("T3 started");
-      printNewLineInConsole;
-      printNewLineInConsole;
-      
-      getMatrixFromKeyboard(MP, "T3, MP");
-      getMatrixFromKeyboard(MR, "T3, MR");
-      getVectorFromKeyboard (V, "T3, V");
-   
-      O := multiplyVectorOnNumber(maxMatrix(multiplyMatrices(MP, MR)), V);
+   printTextInConsole("T3 started");
+   printNewLineInConsole;
+   printNewLineInConsole;
 
-      printNewLineInConsole;
-      printTextInConsole("T3, O = ");
-      printVectorInConsole(O);
-
-      printNewLineInConsole;
-      printTextInConsole("T3 finished");
+   if N < 1000 then   
+      fillMatrixFromKeyboard(MP, "T3, MP");
+      fillMatrixFromKeyboard(MR, "T3, MR");
+      fillVectorFromKeyboard (V, "T3, V");
    else
-      printTextInConsole("Not realized yet");
+      fillMatrixByNums(MP, 1);
+      fillMatrixByNums(MR, 2);
+      fillVectorByNums(V, 3);
    end if;
+
+   O := multiplyVectorOnNumber(maxMatrix(multiplyMatrices(MP, MR)), V);
+
+   printNewLineInConsole;
+   printTextInConsole("T3, O = ");
+   printVectorInConsole(O);
+
+   printNewLineInConsole;
+   printTextInConsole("T3 finished");
 end T3;

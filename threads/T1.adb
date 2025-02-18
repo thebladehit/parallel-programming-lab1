@@ -16,24 +16,26 @@ procedure T1 is
    MB: Matrix;
    MC: Matrix;
 begin
+   printTextInConsole("T1 started");
+   printNewLineInConsole;
+   printNewLineInConsole;
+
    if N < 1000 then
-      printTextInConsole("T1 started");
-      printNewLineInConsole;
-      printNewLineInConsole;
-      
-      getMatrixFromKeyboard(MB, "T1, MB");
-      getMatrixFromKeyboard(MC, "T1, MC");
-      getVectorFromKeyboard (B, "T1, B");
-   
-      A := multiplyVectorOnMatrix(B, multiplyMatrices(MB, MC));
-
-      printNewLineInConsole;
-      printTextInConsole("A = ");
-      printVectorInConsole(A);
-
-      printNewLineInConsole;
-      printTextInConsole("T1 finished");
+      fillMatrixFromKeyboard(MB, "T1, MB");
+      fillMatrixFromKeyboard(MC, "T1, MC");
+      fillVectorFromKeyboard(B, "T1, B");
    else
-      printTextInConsole("Not realized yet");
+      fillMatrixByNums(MB, 1);
+      fillMatrixByNums(MC, 2);
+      fillVectorByNums(B, 3);
    end if;
+
+   A := multiplyVectorOnMatrix(B, multiplyMatrices(MB, MC));
+
+   printNewLineInConsole;
+   printTextInConsole("A = ");
+   printVectorInConsole(A);
+
+   printNewLineInConsole;
+   printTextInConsole("T1 finished");
 end T1;
