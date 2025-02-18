@@ -51,14 +51,14 @@ package body Data is
       return Integer'Image(num)(2..Integer'Image(num)'Length);
    end formatIntegerInString;
 
-   procedure getVectorFromKeyboard(V: in out Vector; preText: String) is
+   procedure fillVectorFromKeyboard(V: in out Vector; preText: String) is
    begin
       for i in 0..N loop
          V(i) := inputFromKeyboard(preText & " [" & formatIntegerInString(i) & "]: ");
       end loop;
-   end getVectorFromKeyboard;
+   end fillVectorFromKeyboard;
 
-   procedure getMatrixFromKeyboard(M: in out Matrix; preText: String) is
+   procedure fillMatrixFromKeyboard(M: in out Matrix; preText: String) is
       formatedI: String := " ";
       formatedJ: String := " ";
    begin
@@ -69,7 +69,7 @@ package body Data is
             M(i, j) := inputFromKeyboard(preText & " [" & formatedI & ", " & formatedJ & "]: ");
          end loop;
       end loop;
-   end getMatrixFromKeyboard;
+   end fillMatrixFromKeyboard;
 
    function multiplyMatrices(firstM: Matrix; secondM: Matrix) return Matrix is
       resM: Matrix;

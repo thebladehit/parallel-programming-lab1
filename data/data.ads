@@ -18,8 +18,8 @@ package Data is
    procedure printVectorInConsole(V: Vector);
    procedure printMatrixInConsole(M: Matrix);
 
-   procedure getVectorFromKeyboard(V: in out Vector; preText: String);
-   procedure getMatrixFromKeyboard(M: in out Matrix; preText: String);
+   procedure fillVectorFromKeyboard(V: in out Vector; preText: String);
+   procedure fillMatrixFromKeyboard(M: in out Matrix; preText: String);
    procedure sortMatrix(M: in out Matrix);
    procedure fillVectorByNums(V: in out Vector; num: Integer);
    procedure fillMatrixByNums(M: in out Matrix; num: Integer);
