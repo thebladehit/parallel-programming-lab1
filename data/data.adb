@@ -158,7 +158,7 @@ package body Data is
          for i in 1..N loop
             curElem := M(row, i);
             prevIdx := i - 1;
-            while prevIdx >= 0 loop
+            while prevIdx >= 1 loop
                if M(row, prevIdx) > curElem then
                   M(row, prevIdx + 1) := M(row, prevIdx);
                   prevIdx := prevIdx - 1;
