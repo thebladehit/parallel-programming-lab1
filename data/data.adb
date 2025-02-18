@@ -170,4 +170,20 @@ package body Data is
          end loop;
       end loop;
    end sortMatrix;
+
+   procedure fillVectorByNums(V: in out Vector; num: Integer) is
+   begin
+      for i in 0..N loop
+         V(i) := num;
+      end loop;
+   end fillVectorByNums;
+
+   procedure fillMatrixByNums(M: in out Matrix; num: Integer) is
+   begin
+      for i in 0..N loop
+         for j in 0..N loop
+            M(i, j) := num;
+         end loop;
+      end loop;
+   end fillMatrixByNums;
 end Data;

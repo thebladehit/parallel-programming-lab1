@@ -21,6 +21,8 @@ package Data is
    procedure getVectorFromKeyboard(V: in out Vector; preText: String);
    procedure getMatrixFromKeyboard(M: in out Matrix; preText: String);
    procedure sortMatrix(M: in out Matrix);
+   procedure fillVectorByNums(V: in out Vector; num: Integer);
+   procedure fillMatrixByNums(M: in out Matrix; num: Integer);
 
    function multiplyMatrices(firstM: Matrix; secondM: Matrix) return Matrix;
    function multiplyVectorOnMatrix(V: Vector; M: Matrix) return Vector;
