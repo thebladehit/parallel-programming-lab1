@@ -8,10 +8,10 @@
 -- 16.02.2025
 
 package Data is
-   N: constant Integer := 2 - 1;
+   N: constant Integer := 1000;
    
-   type Vector is array (0..N) of Integer;
-   type Matrix is array (0..N, 0..N) of Integer;
+   type Vector is array (1..N) of Integer;
+   type Matrix is array (1..N, 1..N) of Integer;
 
    procedure printNewLineInConsole;
    procedure printTextInConsole(text: String);

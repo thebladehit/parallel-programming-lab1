@@ -23,15 +23,15 @@ package body Data is
 
    procedure printVectorInConsole(V: Vector) is
    begin
-      for i in 0..N loop
+      for i in 1..N loop
          Put(Item => Integer'Image(V(i)));
       end loop;
    end printVectorInConsole;
 
    procedure printMatrixInConsole(M: Matrix) is 
    begin
-      for i in 0..N loop
-         for j in 0..N loop
+      for i in 1..N loop
+         for j in 1..N loop
             Put(Item => Integer'Image(M(i, j)));
          end loop;
          New_Line;
@@ -53,7 +53,7 @@ package body Data is
 
    procedure fillVectorFromKeyboard(V: in out Vector; preText: String) is
    begin
-      for i in 0..N loop
+      for i in 1..N loop
          V(i) := inputFromKeyboard(preText & " [" & formatIntegerInString(i) & "]: ");
       end loop;
    end fillVectorFromKeyboard;
@@ -62,9 +62,9 @@ package body Data is
       formatedI: String := " ";
       formatedJ: String := " ";
    begin
-      for i in 0..N loop
+      for i in 1..N loop
          formatedI := formatIntegerInString(i);
-         for j in 0..N loop
+         for j in 1..N loop
             formatedJ := formatIntegerInString(j);
             M(i, j) := inputFromKeyboard(preText & " [" & formatedI & ", " & formatedJ & "]: ");
          end loop;
@@ -74,10 +74,10 @@ package body Data is
    function multiplyMatrices(firstM: Matrix; secondM: Matrix) return Matrix is
       resM: Matrix;
    begin
-      for i in 0..N loop
-         for j in 0..N loop
+      for i in 1..N loop
+         for j in 1..N loop
             resM(i, j) := 0;
-            for k in 0..N loop
+            for k in 1..N loop
                resM(i, j) := resM(i, j) + firstM(i, k) * secondM(k, j);
             end loop;
          end loop;
@@ -89,8 +89,8 @@ package body Data is
    function addMatrices(firstM: Matrix; secondM: Matrix) return Matrix is
       resM: Matrix;
    begin
-      for i in 0..N loop
-         for j in 0..N loop
+      for i in 1..N loop
+         for j in 1..N loop
             resM(i, j) := firstM(i, j) + secondM(i, j);
          end loop;
       end loop;
@@ -101,9 +101,9 @@ package body Data is
    function multiplyVectorOnMatrix(V: Vector; M: Matrix) return Vector is
       resV: Vector;
    begin
-      for i in 0..N loop
+      for i in 1..N loop
          resV(i) := 0;
-         for j in 0..N loop
+         for j in 1..N loop
             resV(i) := resV(i) + V(j) * M(j, i);
          end loop;
       end loop;
@@ -114,7 +114,7 @@ package body Data is
    function multiplyVectorOnNumber(num: Integer; V: Vector) return Vector is
       resV: Vector;
    begin 
-      for i in 0..N loop
+      for i in 1..N loop
          resV(i) := num * V(i);
       end loop;
 
@@ -124,10 +124,10 @@ package body Data is
    function maxMatrix(M: Matrix) return Integer is
       maxV: Integer;
    begin
-      maxV := M(0, 0);
+      maxV := M(1, 1);
 
-      for i in 0..N loop
-         for j in 0..N loop
+      for i in 1..N loop
+         for j in 1..N loop
             if (M(i, j) > maxV) then
                maxV := M(i, j);
             end if;
@@ -154,7 +154,7 @@ package body Data is
    procedure sortMatrix(M: in out Matrix) is
       curElem, prevIdx: Integer;
    begin
-      for row in 0..N loop
+      for row in 1..N loop
          for i in 1..N loop
             curElem := M(row, i);
             prevIdx := i - 1;
@@ -173,15 +173,15 @@ package body Data is
 
    procedure fillVectorByNums(V: in out Vector; num: Integer) is
    begin
-      for i in 0..N loop
+      for i in 1..N loop
          V(i) := num;
       end loop;
    end fillVectorByNums;
 
    procedure fillMatrixByNums(M: in out Matrix; num: Integer) is
    begin
-      for i in 0..N loop
-         for j in 0..N loop
+      for i in 1..N loop
+         for j in 1..N loop
             M(i, j) := num;
          end loop;
       end loop;
