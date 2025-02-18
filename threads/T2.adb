@@ -10,34 +10,36 @@
 with Data;
 use Data;
 
-procedure T2 is
-   MG: Matrix;
-   MF: Matrix;
-   MK: Matrix;
-   ML: Matrix;
-begin
-   printTextInConsole("T2 started");
-   printNewLineInConsole;
-   printNewLineInConsole;
+package body T2 is
+   procedure run is
+      MG: Matrix;
+      MF: Matrix;
+      MK: Matrix;
+      ML: Matrix;
+   begin
+      printTextInConsole("T2 started");
+      printNewLineInConsole;
+      printNewLineInConsole;
 
-   if N < 1000 then
-      fillMatrixFromKeyboard(MF, "T2, MF");
-      fillMatrixFromKeyboard(MK, "T2, MK");
-      fillMatrixFromKeyboard(ML, "T2, ML");   
-   else
-      fillMatrixByNums(MF, 1);
-      fillMatrixByNums(MK, 1);
-      fillMatrixByNums(ML, 1);
-   end if;
+      if N < 1000 then
+         fillMatrixFromKeyboard(MF, "T2, MF");
+         fillMatrixFromKeyboard(MK, "T2, MK");
+         fillMatrixFromKeyboard(ML, "T2, ML");   
+      else
+         fillMatrixByNums(MF, 1);
+         fillMatrixByNums(MK, 1);
+         fillMatrixByNums(ML, 1);
+      end if;
 
-   sortMatrix(MF);
-   MG := addMatrices(multiplyMatrices(MF, MK), ML);
+      sortMatrix(MF);
+      MG := addMatrices(multiplyMatrices(MF, MK), ML);
 
-   printNewLineInConsole;
-   printTextInConsole("T2, MG = ");
-   printNewLineInConsole;
-   printMatrixInConsole(MG);
+      printNewLineInConsole;
+      printTextInConsole("T2, MG = ");
+      printNewLineInConsole;
+      printMatrixInConsole(MG);
 
-   printNewLineInConsole;
-   printTextInConsole("T2 finished");
+      printNewLineInConsole;
+      printTextInConsole("T2 finished");
+   end run;
 end T2;

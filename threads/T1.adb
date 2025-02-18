@@ -10,32 +10,34 @@
 with Data;
 use Data;
 
-procedure T1 is
-   A: Vector;
-   B: Vector;
-   MB: Matrix;
-   MC: Matrix;
-begin
-   printTextInConsole("T1 started");
-   printNewLineInConsole;
-   printNewLineInConsole;
+package body T1 is
+   procedure run is
+      A: Vector;
+      B: Vector;
+      MB: Matrix;
+      MC: Matrix;
+   begin
+      printTextInConsole("T1 started");
+      printNewLineInConsole;
+      printNewLineInConsole;
 
-   if N < 1000 then
-      fillMatrixFromKeyboard(MB, "T1, MB");
-      fillMatrixFromKeyboard(MC, "T1, MC");
-      fillVectorFromKeyboard(B, "T1, B");
-   else
-      fillMatrixByNums(MB, 1);
-      fillMatrixByNums(MC, 2);
-      fillVectorByNums(B, 3);
-   end if;
+      if N < 1000 then
+         fillMatrixFromKeyboard(MB, "T1, MB");
+         fillMatrixFromKeyboard(MC, "T1, MC");
+         fillVectorFromKeyboard(B, "T1, B");
+      else
+         fillMatrixByNums(MB, 1);
+         fillMatrixByNums(MC, 2);
+         fillVectorByNums(B, 3);
+      end if;
 
-   A := multiplyVectorOnMatrix(B, multiplyMatrices(MB, MC));
+      A := multiplyVectorOnMatrix(B, multiplyMatrices(MB, MC));
 
-   printNewLineInConsole;
-   printTextInConsole("A = ");
-   printVectorInConsole(A);
+      printNewLineInConsole;
+      printTextInConsole("A = ");
+      printVectorInConsole(A);
 
-   printNewLineInConsole;
-   printTextInConsole("T1 finished");
+      printNewLineInConsole;
+      printTextInConsole("T1 finished");
+   end run;
 end T1;
