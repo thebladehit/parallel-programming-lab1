@@ -12,6 +12,7 @@ with T2;
 with T3;
 
 procedure Lab1 is
+   -- tasks specification
    task type Task1 is
       pragma Storage_Size(20_000_000);
       pragma Priority(7);
@@ -30,6 +31,7 @@ procedure Lab1 is
       pragma CPU(3);
    end Task3;
 
+   -- tasks body
    task body Task1 is
    begin
       T1.run;
@@ -45,6 +47,7 @@ procedure Lab1 is
       T3.run;
    end Task3;
 
+   -- tasks initializations
    Thread1: Task1;
    Thread2: Task2;
    Thread3: Task3;
