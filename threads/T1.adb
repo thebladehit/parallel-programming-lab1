@@ -33,9 +33,11 @@ package body T1 is
 
       A := multiplyVectorOnMatrix(B, multiplyMatrices(MB, MC));
 
-      printNewLineInConsole;
-      printTextInConsole("A = ");
-      printVectorInConsole(A);
+      if N < 1000 then
+         printNewLineInConsole;
+         printTextInConsole("A = ");
+         printVectorInConsole(A);
+      end if;
 
       printNewLineInConsole;
       printTextInConsole("T1 finished");

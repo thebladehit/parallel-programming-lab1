@@ -33,9 +33,11 @@ package body T3 is
 
       O := multiplyVectorOnNumber(maxMatrix(multiplyMatrices(MP, MR)), V);
 
-      printNewLineInConsole;
-      printTextInConsole("T3, O = ");
-      printVectorInConsole(O);
+      if N < 1000 then
+         printNewLineInConsole;
+         printTextInConsole("T3, O = ");
+         printVectorInConsole(O);
+      end if;
 
       printNewLineInConsole;
       printTextInConsole("T3 finished");

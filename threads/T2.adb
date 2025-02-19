@@ -34,10 +34,12 @@ package body T2 is
       sortMatrix(MF);
       MG := addMatrices(multiplyMatrices(MF, MK), ML);
 
-      printNewLineInConsole;
-      printTextInConsole("T2, MG = ");
-      printNewLineInConsole;
-      printMatrixInConsole(MG);
+      if N < 1000 then
+         printNewLineInConsole;
+         printTextInConsole("T2, MG = ");
+         printNewLineInConsole;
+         printMatrixInConsole(MG);
+      end if;
 
       printNewLineInConsole;
       printTextInConsole("T2 finished");
