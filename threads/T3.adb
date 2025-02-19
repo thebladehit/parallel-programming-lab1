@@ -18,8 +18,6 @@ package body T3 is
       V: Vector;
    begin
       printTextInConsole("T3 started");
-      printNewLineInConsole;
-      printNewLineInConsole;
 
       if N < 1000 then   
          fillMatrixFromKeyboard(MP, "T3, MP");
@@ -34,7 +32,6 @@ package body T3 is
       O := multiplyVectorOnNumber(maxMatrix(multiplyMatrices(MP, MR)), V);
 
       if N < 1000 then
-         printNewLineInConsole;
          printTextInConsole("T3, O = ");
          printVectorInConsole(O);
       end if;

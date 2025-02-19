@@ -40,10 +40,21 @@ package body Data is
 
    function inputFromKeyboard(text: String) return Integer is
       Num: Integer;
+      Success: Boolean := False;
    begin
-      Put(text);
-      Get(Num);
-      return Num;
+     loop
+         begin
+            Put(text);
+            Get(Num);
+            Success := True;
+         exception
+            when Data_Error =>
+               Put_Line("Error: Invalid input");
+               Skip_Line;
+         end;
+         exit when Success;
+      end loop;
+   return Num;
    end inputFromKeyboard;
 
    function formatIntegerInString(num: Integer) return String is

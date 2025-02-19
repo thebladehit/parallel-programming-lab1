@@ -18,8 +18,6 @@ package body T2 is
       ML: Matrix;
    begin
       printTextInConsole("T2 started");
-      printNewLineInConsole;
-      printNewLineInConsole;
 
       if N < 1000 then
          fillMatrixFromKeyboard(MF, "T2, MF");
@@ -35,9 +33,7 @@ package body T2 is
       MG := addMatrices(multiplyMatrices(MF, MK), ML);
 
       if N < 1000 then
-         printNewLineInConsole;
          printTextInConsole("T2, MG = ");
-         printNewLineInConsole;
          printMatrixInConsole(MG);
       end if;
 

@@ -18,8 +18,6 @@ package body T1 is
       MC: Matrix;
    begin
       printTextInConsole("T1 started");
-      printNewLineInConsole;
-      printNewLineInConsole;
 
       if N < 1000 then
          fillMatrixFromKeyboard(MB, "T1, MB");
@@ -34,7 +32,6 @@ package body T1 is
       A := multiplyVectorOnMatrix(B, multiplyMatrices(MB, MC));
 
       if N < 1000 then
-         printNewLineInConsole;
          printTextInConsole("A = ");
          printVectorInConsole(A);
       end if;
